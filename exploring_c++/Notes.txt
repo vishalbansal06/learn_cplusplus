@@ -1,0 +1,7 @@
+Notes for c++:
+1. Intialization:
+int a(3.14); // which one is okay,
+int b{3.14}; // and which is an error?
+I’ve always used curly braces to initialize a variable, but parentheses also work as long as you provide at least one argument. 
+You also pay a cost in safety. The compiler allows conversions that lose information, such as floating-point to integer, 
+when you use parentheses for initialization, but it reports an error when you use curly braces.
