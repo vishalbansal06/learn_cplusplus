@@ -5,3 +5,9 @@ int b{3.14}; // and which is an error?
 I’ve always used curly braces to initialize a variable, but parentheses also work as long as you provide at least one argument. 
 You also pay a cost in safety. The compiler allows conversions that lose information, such as floating-point to integer, 
 when you use parentheses for initialization, but it reports an error when you use curly braces.
+
+2.Default keyword:
+If you do not write an assignment operator, the compiler writes one for you. In the case of the simple rational type, it turns out that the compiler writes one that works exactly like the one in Listing 32-2, so there was actually no need to write it yourself (except for instructional purposes). When the compiler writes code for you, it is hard for the human reader to know which functions are actually defined. Also, it is harder to document the implicit functions. So C++ lets you state explicitly that you want the compiler to supply a special function for you, by following a declaration (not a definition) with =default instead of a function body.
+
+rational& operator=(rational const&) = default;
+
